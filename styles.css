@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+:root {
+  --curve: 10px;
+  --moderate_cyan: hsl(176, 50%, 47%);
+  --dark_cyan: hsl(176, 72%, 28%);
+  --dark_gray: hsl(0, 0%, 48%);
+  --light_gray: hsl(0, 0%, 90%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 20px;
+  font-family: 'Commissioner', sans-serif;
+  font-size: 1em;
+  background-color: var(--light_gray);
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+p {
+  color: var(--dark_gray);
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.card {
+  background-color: #fff;
+  width: 90%;
+  border: 1px solid var(--lights_gray);
+  border-radius: var(--curve);
+  text-align: center;
+  padding: 50px 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  background-color: var(--moderate_cyan);
+  color: #fff;
+  border-radius: 30px;
+  border: none;
+  width: 70%;
+  height: 55px;
+  font-weight: 700;
+}
+
+.btn_zero {
+  background-color: var(--dark_gray);
+}
+
+.grey_out {
+  opacity: 0.4;
+}
+
+/* Header */
+header {
+  width: 90%;
+}
+
+.header_bg {
+  background-image: url(images/image-hero-mobile.jpg);
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.header_bg::before {
+  content: '';
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  height: 400px;
+  width: 100%;
+  z-index: -1;
+}
+
+.header_menu {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu_mobile {
+  display: flex;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 25px;
+  padding: 0;
+  text-align: start;
+  border-radius: var(--curve);
+  z-index: 2;
+}
+
+.menu_desktop {
+  display: none;
+}
+
+.links {
+  margin: 0;
+  padding-left: 10px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--light_gray);
+}
+
+.links:last-child {
+  border-bottom: none;
+}
+
+/* Hero */
+#header_hero {
+  margin-top: 15.625rem;
+  position: relative;
+}
+
+.master_logo {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0px;
+  width: 100%;
+}
+
+.bookmark {
+  display: none;
+  font-weight: 700;
+}
+
+/* Crowdfund stats */
+#live_stats {
+  text-align: center;
+}
+
+#live_stats > div {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.amount,
+.backers {
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.amount::after,
+.backers::after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+  padding-top: 25px;
+  border-bottom: 1px solid var(--dark_gray);
+  transition: width ease 0.2s;
+}
+
+.amount:hover::after,
+.backers:hover::after {
+  width: 50%;
+}
+
+#live_stats h2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+#live_stats small {
+  margin: 0;
+  padding: 0;
+  color: var(--dark_gray);
+}
+
+#live_stats progress[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  appearance: none;
+  border: none;
+  width: 100%;
+  height: 15px;
+
+  /* For IE */
+  color: var(--dark_cyan);
+}
+
+#live_stats progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: var(--curve);
+}
+#live_stats progress[value]::-moz-progress-bar {
+  background-color: var(--dark_cyan);
+}
+
+#live_stats progress[value]::-webkit-progress-value {
+  background-color: var(--dark_cyan);
+  border-radius: var(--curve);
+}
+
+/* About */
+
+#about {
+  text-align: start;
+  align-items: flex-start;
+}
+
+#about .card {
+  width: 100%;
+  border: 1px solid var(--dark_gray);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  text-align: start;
+  align-items: flex-start;
+}
+#about .card > * {
+  width: 100%;
+}
+#about .card > button {
+  width: 150px;
+  height: 50px;
+}
+
+#about h2 {
+  margin: 0 0 25px;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+#about p {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+#about h3 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+#about h4 {
+  margin: 10px 0 30px;
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--moderate_cyan);
+}
+
+#about .card p {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.pledges {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.pledges_left {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.left {
+  font-size: 0.9em;
+  margin-left: 7px;
+  color: var(--dark_gray);
+}
+
+/* Media Queries///////////////////////// */
+
+@media screen and (min-width: 768px) {
+  body {
+    padding-top: 50px;
+  }
+
+  .card {
+    width: 60%;
+    padding: 50px 40px 40px;
+  }
+
+  /* Header */
+  .header_bg {
+    background-image: url(images/image-hero-desktop.jpg);
+  }
+
+  .hamburger,
+  .menu_mobile {
+    display: none;
+  }
+
+  .menu_desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .links {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 20px 20px;
+    padding: 0;
+    text-decoration: none;
+    border-bottom: none;
+    transform: translateY(50%);
+  }
+
+  /* Hero */
+  #bookmark {
+    display: flex;
+    align-items: center;
+    background-color: var(--light_gray);
+    border-radius: 25px;
+    padding-right: 15px;
+  }
+
+  .bookmark {
+    display: initial;
+    margin-left: 15px;
+  }
+
+  .project .btn {
+    width: 250px;
+  }
+
+  .project {
+    justify-content: space-between;
+  }
+
+  /* Crowdfund Live stats */
+  #live_stats.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #live_stats > div {
+    margin-bottom: 30px;
+  }
+
+  .amount,
+  .backers,
+  .days_left {
+    padding-bottom: 0px;
+    position: relative;
+  }
+
+  .backers,
+  .days_left {
+    border-left: 1px solid var(--dark_gray);
+  }
+
+  .amount::after,
+  .backers::after {
+    display: none;
+  }
+
+  #live_stats small {
+    font-size: 16px;
+  }
+
+  .progress {
+    grid-column: 1 / 4;
+  }
+
+  /* About */
+  #about p {
+    font-size: 16px;
+  }
+
+  #about .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  #about .card p {
+    grid-column: 1 / span 3;
+    text-align: justify;
+    margin: 0;
+  }
+
+  #about .btn {
+    margin: 0;
+    justify-self: end;
+  }
+
+  #about h4,
+  #about h3 {
+    height: 25px;
+    display: flex;
+    align-items: center;
+  }
+
+  #about h3 {
+    font-size: 1.2em;
+  }
+
+  #about h4 {
+    justify-content: flex-end;
+    text-align: end;
+    margin: 0;
+  }
+
+  .pledges {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 900px) {
+  #about h3 {
+    font-size: 1em;
+  }
+
+  #live_stats h2 {
+    font-size: 1.5em;
+  }
+}
