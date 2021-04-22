@@ -262,7 +262,7 @@ header {
 
 #about .card {
   width: 100%;
-  border: 1px solid var(--dark_gray);
+  border: 1px solid var(--light_gray);
   margin-top: 10px;
   margin-bottom: 20px;
   padding-top: 30px;
@@ -323,6 +323,120 @@ header {
   color: var(--dark_gray);
 }
 
+/* Back this project */
+#back_this_project {
+  text-align: start;
+  align-items: flex-start;
+}
+
+summary h3,
+summary p {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+summary {
+  list-style: none;
+}
+
+/* summary:focus {
+  outline: none;
+} */
+
+.line {
+  display: none;
+  margin: 25px auto;
+  width: 100%;
+  border-bottom: 1px solid var(--light_gray);
+  visibility: hidden;
+  transition: all ease 0.2s;
+}
+
+#back_this_project summary::marker {
+  display: none;
+}
+
+.enter_pledge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.enter_pledge .btn {
+  width: 100px;
+  height: 40px;
+}
+
+.currency {
+  width: 100px;
+  height: 40px;
+  border-radius: 30px;
+  border: var(--moderate_cyan) 1px solid;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 0;
+}
+
+.pledge_input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#pledged_amount {
+  border: 0;
+  outline: 0;
+  height: 35px;
+  width: 60px;
+}
+
+#back_this_project .card {
+  width: 100%;
+  border: 1px solid var(--light_gray);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  text-align: start;
+  align-items: flex-start;
+}
+#back_this_project .card > * {
+  width: 100%;
+}
+#back_this_project .card > button {
+  width: 150px;
+  height: 50px;
+}
+
+#back_this_project h2 {
+  margin: 0 0 25px;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+#back_this_project p {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+#back_this_project h3 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+#back_this_project h4 {
+  margin: 10px 0 30px;
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--moderate_cyan);
+}
+
+#back_this_project .card p {
+  margin: 0;
+}
+
 /* Media Queries///////////////////////// */
 
 @media screen and (min-width: 768px) {
@@ -369,6 +483,9 @@ header {
     background-color: var(--light_gray);
     border-radius: 25px;
     padding-right: 15px;
+    opacity: 0.6;
+    color: var(--dark_gray);
+    transition: all 0.8s ease-in;
   }
 
   .bookmark {
@@ -462,6 +579,12 @@ header {
 
   .pledges {
     margin: 0;
+  }
+
+  /* Back this project */
+
+  #back_this_project .card {
+    padding: 20px 0px 20px;
   }
 }
 
