@@ -330,6 +330,7 @@ header {
 }
 
 summary h3,
+summary h4,
 summary p {
   padding-left: 40px;
   padding-right: 40px;
@@ -343,11 +344,10 @@ summary {
 } */
 
 .line {
-  display: none;
+  display: block;
   margin: 25px auto;
   width: 100%;
   border-bottom: 1px solid var(--light_gray);
-  visibility: hidden;
   transition: all ease 0.2s;
 }
 
@@ -385,7 +385,7 @@ summary {
   justify-content: space-evenly;
 }
 
-#pledged_amount {
+.pledged_amount {
   border: 0;
   outline: 0;
   height: 35px;

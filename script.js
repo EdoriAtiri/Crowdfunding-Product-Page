@@ -6,8 +6,7 @@ const links = document.querySelectorAll(".links")
 const bookmark = document.querySelector(".bookmark"),
 bookmark_div = document.getElementById("bookmark"),
 bookmark_img = document.getElementById("bookmark_image");
-const line = document.querySelector(".line");
-const details = document.getElementById('detail');
+const details = document.querySelectorAll('.detail');
 
 // Open Mobile Menu
 function open_menu () {
@@ -34,24 +33,15 @@ bookmark_div.style.color = "--dark_cyan";
 bookmark_img.src = "images/icon-bookmark-cyan.svg";
 }
 
-function detail_state () {
-     if (details.open) {
-         line.style.display = 'block';
-        line.style.visibility = "visible";
- 
-    }  else {
-         line.style.visibility = "hidden"
-         line.style.display = 'none'
-  }
-}
+
 
 
 // Event Listeners
 hamburger_menu.addEventListener('click', open_menu)
 dark_overlay.addEventListener('click', close_menu)
-details.addEventListener("toggle", detail_state);
 bookmark_div.addEventListener("click", bookmarked)
 links.forEach(link => {
     link.addEventListener('click', close_menu)
 }); 
+
 
