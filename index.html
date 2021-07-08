@@ -42,7 +42,7 @@
      <p>A beautiful &
     handcrafted monitor stand to reduce neck and eye strain.<p>
       <div class="project">
-        <button class="btn">Back this project</button>
+        <button id="back_project_btn" class="btn">Back this project</button>
         <div id="bookmark">  
           <img id="bookmark_image" src="images/icon-bookmark.svg" alt="bookmark item" width="56px" height="56px">
           <a class="bookmark">Bookmark</a>
@@ -127,12 +127,14 @@ Select Reward
 
    <!-- Back This Project -->
    <section id="back_this_project" class="card">
-     <h2>Bact this project</h2>
+    <div class="back_this"><h2>Back this project</h2><span class="close">&times;</span></div>
      <p>Want to support in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 
-      <div class="card card_cyan">
+      <div class="card card_pledge">
         <details class="detail">
-      <summary> <h3>Pledge with no reward</h3>
+      <summary> <div id="back_card_header"><div class="circle">
+        <div class="small_circle"></div>
+      </div><h3>Pledge with no reward</h3></div>
                   <p>Choose to support us without a
         reward if you simply believe in our project. As a backer, you will be signed
         up to receive product updates via email.</p>
@@ -156,14 +158,28 @@ Select Reward
       </div>
 
 
-      <div class="card card_cyan">
+      <div class="card card_pledge">
         <details class="detail">
           <summary>
-            <h3>Bamboo Stand</h3>
-            <h4>Pledge $25 or more</h4>
+            <div id="back_card_header">
+              <div class="circle">
+                <div class="small_circle"></div>
+                </div>
+                <div id="back_this_product">
+                  <h3>Bamboo Stand</h3>
+                  <h4>Pledge $25 or more</h4>
+                </div>
+              </div>
+           
+            
             <p>You
               get an ergonomic stand made of natural bamboo. You've helped us launch our
               promotional campaign, and you’ll be added to a special Backer member list.</p>
+
+               <div class="pledge_no">
+                 <span class=pledges_left>101 </span><span class="left">left</span>
+          </div>
+
             </summary>
 
             <div class="line"></div>
@@ -185,14 +201,27 @@ Select Reward
       </div>
     
      
-    <div class="card card_cyan">
+    <div class="card card_pledge">
       <details class="detail">
         <summary>
-        <h3>Black Edition Stand </h3>
-        <h4>Pledge $75 or more</h4>
+          <div id="back_card_header">
+            <div class="circle">
+              <div class="small_circle"></div>
+            </div>
+            <div id="back_this_product">
+          <h3>Black Edition Stand </h3>
+          <h4>Pledge $75 or more</h4>
+            </div>
+          </div>
+       
+        
         <p>You get a
           Black Special Edition computer stand and a personal thank you. You’ll be
           added to our Backer member list. Shipping is included.</p>
+          <div class="pledge_no">
+<span class=pledges_left>0 </span><span class="left">left</span>
+          </div>
+          
         </summary>
         
         <div class="line"></div>
@@ -213,14 +242,28 @@ Select Reward
       </details>
     </div>
   
-    <div class="card card_cyan grey_out">
+    <div class="card card_pledge grey_out">
       <details class="detail">
         <summary>
+          <div id="back_card_header">
+            <div class="circle">
+              <div class="small_circle"></div>
+            </div>
+            <div id="back_this_product">
         <h3>Mahogany Special Edition</h3>
         <h4>Pledge $200 or more </h4>
+            </div>
+          </div>
+       
+      
         <p>You get two Special Edition
           Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
           to our Backer member list. Shipping is included.</p>
+
+          <div class="pledge_no">
+            <span class=pledges_left>64 </span><span class="left">left</span>
+          
+          </div>
         </summary>
         
         <div class="line"></div>

@@ -18,7 +18,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   z-index: 1;
   overflow-x: hidden;
@@ -69,6 +69,7 @@ p {
   height: 55px;
   font-weight: 700;
   font-size: 0.9em;
+  cursor: pointer;
 }
 
 .btn:active {
@@ -180,6 +181,10 @@ header {
   display: none;
   font-weight: 700;
   font-size: 0.9em;
+}
+
+#bookmark {
+  cursor: pointer;
 }
 
 /* Crowdfund stats */
@@ -323,18 +328,44 @@ header {
   color: var(--dark_gray);
 }
 
-/* Back this project */
+/* ///////////////////////////////////////////// */
+/*Back this project */
+/* //////////////////////////////////////////// */
 #back_this_project {
+  /* display: none; */
   text-align: start;
   align-items: flex-start;
+  /* position: absolute;
+  top: 0;
+  margin-top: 100px;
+  z-index: 2; */
 }
 
-summary h3,
-summary h4,
-summary p {
+.back_this {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 25px;
+  width: 100%;
+}
+
+.back_this .close {
+  color: var(--dark_gray);
+  font-weight: 700;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.back_this .close:active {
+  transform: scale(0.8);
+}
+
+/* summary p,
+summary div {
   padding-left: 40px;
   padding-right: 40px;
-}
+} */
 summary {
   list-style: none;
 }
@@ -357,7 +388,7 @@ summary {
 
 .enter_pledge {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   padding-left: 40px;
   padding-right: 40px;
@@ -394,7 +425,7 @@ summary {
 
 #back_this_project .card {
   width: 100%;
-  border: 1px solid var(--light_gray);
+  border: 1px solid var(--light_cyan);
   margin-top: 10px;
   margin-bottom: 20px;
   padding-top: 30px;
@@ -410,14 +441,13 @@ summary {
 }
 
 #back_this_project h2 {
-  margin: 0 0 25px;
+  margin: 0;
   font-weight: 700;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 #back_this_project p {
-  margin: 0;
-  margin-bottom: 25px;
+  margin: 0 0 25px 0;
 }
 
 #back_this_project h3 {
@@ -434,7 +464,59 @@ summary {
 }
 
 #back_this_project .card p {
+  margin: 25px 0;
+}
+
+summary .pledges_left {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+summary .left {
+  font-size: 1em;
+}
+
+#back_card_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+
+#back_this_product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+#back_this_product h4 {
   margin: 0;
+}
+
+#back_card_header h3 {
+  display: inline-block;
+}
+
+.circle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 5vw;
+  height: 5vw;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid var(--light_gray);
+  margin-right: 20px;
+}
+
+.small_circle {
+  display: none;
+  width: 50%;
+  height: 50%;
+  background-color: var(--dark_cyan);
+  border-radius: 50%;
 }
 
 /* Media Queries///////////////////////// */
@@ -584,7 +666,45 @@ summary {
   /* Back this project */
 
   #back_this_project .card {
-    padding: 20px 0px 20px;
+    padding: 25px;
+  }
+
+  #back_this_project p {
+    font-size: 1em;
+  }
+  #back_this_project h3 {
+    margin-right: 10px;
+  }
+
+  #back_this_project details {
+    position: relative;
+  }
+
+  .pledge_no {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+  }
+
+  .pledge_no .left {
+    margin: 0;
+  }
+
+  #back_this_product {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .circle {
+    width: 2vw;
+    height: 2vw;
+  }
+
+  .small_circle {
+    width: 1vw;
+    height: 1vw;
   }
 }
 
