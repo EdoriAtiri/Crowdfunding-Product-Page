@@ -15,7 +15,7 @@
     <title>Frontend Mentor | Crowdfunding product page</title>
   </head>
   <body>
-    <div id="dark"></div>
+    <div id="dark_overlay"></div>
     <header>
     <div class="header_bg"></div>
     <div class="header_menu">
@@ -53,19 +53,19 @@
     <!-- Crowdfund Stats -->
     <section id="live_stats" class="card">
       <div class="amount">
-        <h2>$00,000</h2>
+        <h2 id="current_total"></h2>
         <small>of $100,000</small>
       </div>
       <div class="backers">
-        <h2>5,007</h2>
+        <h2 id="no_of_backers"></h2>
         <small>total backers</small>
-      </div>
+      </div> 
       <div class="days_left">
-        <h2>56</h2>
+        <h2 id="days_left">56</h2>
         <small>days left</small>
       </div>
       <div class="progress">
-        <progress id="live_progress" value="90" max="100"></progress>
+        <progress id="live_progress" value="0" max="100"></progress>
       </div>
     </section>
 
@@ -88,7 +88,7 @@
 get an ergonomic stand made of natural bamboo. You've helped us launch our
 promotional campaign, and you’ll be added to a special Backer member list.</p>
 <div class="pledges">
-<span class=pledges_left>101 </span><span class="left">left</span>
+<span class=pledges_left> </span><span class="left">left</span>
 </div>
 <button class="btn">
   Select Reward
@@ -104,14 +104,14 @@ promotional campaign, and you’ll be added to a special Backer member list.</p>
 Black Special Edition computer stand and a personal thank you. You’ll be
 added to our Backer member list. Shipping is included.</p>
 <div class="pledges">
-  <span class=pledges_left>64 </span><span class="left">left</span>
+  <span class=pledges_left> </span><span class="left">left</span>
 </div>
 <button class="btn">
 Select Reward
 </button>
     </div>
 
-      <div class="card grey_out">
+      <div class="card grey_out_disable">
         <h3>Mahogany Special Edition</h3>
         <h4>Pledge $200 or more </h4>
         <p>You get two Special Edition
@@ -146,10 +146,10 @@ Select Reward
           <div class="pledge_input">
            <span class="currency">$
              <label for="pledge">
-               <input type="text" name="pledge" class="pledged_amount">
+               <input type="number" style="font-weight: 700;" required name="pledge" class="pledged_amount">
              </label>
            </span>
-            <button class="btn">
+            <button class="btn submit">
               Continue
             </button>
           </div>
@@ -158,7 +158,7 @@ Select Reward
       </div>
 
 
-      <div class="card card_pledge">
+      <div class="card card_pledge reward_pledge">
         <details class="detail">
           <summary>
             <div id="back_card_header">
@@ -177,7 +177,7 @@ Select Reward
               promotional campaign, and you’ll be added to a special Backer member list.</p>
 
                <div class="pledge_no">
-                 <span class=pledges_left>101 </span><span class="left">left</span>
+                 <span class=pledges_left>101</span><span class="left"> left</span>
           </div>
 
             </summary>
@@ -189,10 +189,10 @@ Select Reward
             <div class="pledge_input">
               <span class="currency">$
                 <label for="pledge">
-                  <input type="text" name="pledge" class="pledged_amount">
+                  <input type="number" style="font-weight: 700;" required name="pledge" min="25" class="pledged_amount">
                 </label>
               </span>
-              <button class="btn">
+              <button class="btn submit">
                 Continue
               </button>
             </div>
@@ -201,7 +201,7 @@ Select Reward
       </div>
     
      
-    <div class="card card_pledge">
+    <div class="card card_pledge reward_pledge">
       <details class="detail">
         <summary>
           <div id="back_card_header">
@@ -219,7 +219,7 @@ Select Reward
           Black Special Edition computer stand and a personal thank you. You’ll be
           added to our Backer member list. Shipping is included.</p>
           <div class="pledge_no">
-<span class=pledges_left>0 </span><span class="left">left</span>
+<span class=pledges_left>64</span><span class="left"> left</span>
           </div>
           
         </summary>
@@ -231,10 +231,10 @@ Select Reward
           <div class="pledge_input">
             <span class="currency">$
               <label for="pledge">
-                <input type="text" name="pledge" class="pledged_amount">
+                <input type="number" style="font-weight: 700;" min="75" required name="pledge" class="pledged_amount">
               </label>
             </span>
-            <button class="btn">
+            <button class="btn submit">
               Continue
             </button>
           </div>
@@ -242,7 +242,7 @@ Select Reward
       </details>
     </div>
   
-    <div class="card card_pledge grey_out">
+    <div class="card card_pledge reward_pledge grey_out_disable">
       <details class="detail">
         <summary>
           <div id="back_card_header">
@@ -261,7 +261,7 @@ Select Reward
           to our Backer member list. Shipping is included.</p>
 
           <div class="pledge_no">
-            <span class=pledges_left>64 </span><span class="left">left</span>
+            <span class=pledges_left>0</span><span class="left"> left</span>
           
           </div>
         </summary>
@@ -273,25 +273,27 @@ Select Reward
           <div class="pledge_input">
             <span class="currency">$
               <label for="pledge">
-                <input type="text" name="pledge" class="pledged_amount">
+                <input type="number" style="font-weight: 700;" required name="pledge" class="pledged_amount">
               </label>
             </span>
-            <button class="btn">
+            <button class="btn submit">
               Continue
             </button>
           </div>
         </div>
       </details>
     </div>
-    
-    
- 
-    
-  
-
-
    </section>
-  
+
+<section id="thanks" class="card">
+  <img src="images/icon-check.svg" alt="thanks for support checkmark">
+  <h2>Thanks for your support!</h2>
+  <p>Your pledge brings us one step closer to sharing
+  Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our
+  campaign is completed. Got it! </p>
+  <button class="btn">Got it!</button>
+</section>
+
    <!-- Script -->
    <script src="script.js"></script>
   </body>
