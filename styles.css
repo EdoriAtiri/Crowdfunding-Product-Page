@@ -4,7 +4,7 @@
   --curve: 10px;
   --moderate_cyan: hsl(176, 50%, 47%);
   --dark_cyan: hsl(176, 72%, 28%);
-  --dark_gray: hsl(0, 0%, 48%);
+  --dark_gray: hsl(0, 0%, 40%);
   --light_gray: hsl(0, 0%, 90%);
 }
 
@@ -127,7 +127,7 @@ header {
 .header_bg::before {
   content: '';
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   left: 0;
   height: 400px;
@@ -243,7 +243,8 @@ header {
   width: 50%;
 }
 
-#live_stats h2 {
+#live_stats p {
+  color: #000;
   font-size: 2.5em;
   font-weight: 700;
   margin-bottom: 10px;
@@ -569,7 +570,7 @@ details[open] .small_circle {
 
 /* Media Queries///////////////////////// */
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   body {
     padding-top: 50px;
   }
@@ -596,9 +597,9 @@ details[open] .small_circle {
   }
 
   .links {
-    color: white;
-    font-size: 16px;
-    font-weight: 400;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
     margin: 0 20px 20px;
     padding: 0;
     text-decoration: none;
@@ -681,7 +682,6 @@ details[open] .small_circle {
 
   #about .card p {
     grid-column: 1 / span 3;
-    text-align: justify;
     margin: 0;
   }
 
@@ -773,7 +773,20 @@ details[open] .small_circle {
     font-size: 1em;
   }
 
-  #live_stats h2 {
+  #live_stats p {
     font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 690px) and (max-width: 980px) {
+  #back_this_product {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+
+  #back_this_project .pledge_no {
+    margin-top: 5px;
   }
 }
