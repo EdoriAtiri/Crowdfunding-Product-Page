@@ -1,0 +1,25 @@
+{
+  "name": "crowdfunding-product-page-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Crowdfunding product page coding challenge](./design/desktop-preview.jpg)",
+  "main": "script.js",
+  "scripts": {
+    "dev": "parcel index.html",
+  "build": "parcel build index.html"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdoriAtiri/Crowdfunding-Product-Page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdoriAtiri/Crowdfunding-Product-Page/issues"
+  },
+  "homepage": "https://github.com/EdoriAtiri/Crowdfunding-Product-Page#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}

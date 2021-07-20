@@ -1,0 +1,795 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+:root {
+  --curve: 10px;
+  --moderate_cyan: hsl(176, 50%, 47%);
+  --dark_cyan: hsl(176, 72%, 28%);
+  --dark_gray: hsl(0, 0%, 40%);
+  --light_gray: hsl(0, 0%, 90%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#dark_overlay {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 20px;
+  font-family: 'Commissioner', sans-serif;
+  font-size: 1em;
+  background-color: var(--light_gray);
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+p {
+  color: var(--dark_gray);
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+/* Remove up down arrows from number input for chrome, safari, opera. edge */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*For Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.card {
+  background-color: #fff;
+  width: 90%;
+  border: 1px solid var(--light_gray);
+  border-radius: var(--curve);
+  text-align: center;
+  padding: 50px 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  background-color: var(--moderate_cyan);
+  color: #fff;
+  border-radius: 30px;
+  border: none;
+  width: 70%;
+  height: 55px;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+.btn:active {
+  background-color: hsl(176, 72%, 18%);
+}
+
+.btn_zero {
+  background-color: var(--dark_gray);
+}
+
+.hamburger:active,
+.btn:active {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+.grey_out_disable {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Header */
+header {
+  width: 90%;
+}
+
+.header_bg {
+  background-image: url(/image-hero-mobile.fb08d235.jpg);
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.header_bg::before {
+  content: '';
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  height: 400px;
+  width: 100%;
+  z-index: -1;
+}
+
+.header_menu {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu_mobile {
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 25px;
+  padding: 0;
+  text-align: start;
+  border-radius: var(--curve);
+  z-index: 3;
+  transition: visibility 0.5s linear, opacity 0.5s linear;
+}
+
+.menu_desktop {
+  display: none;
+}
+
+.links {
+  margin: 0;
+  padding-left: 10px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--light_gray);
+}
+
+.links:last-child {
+  border-bottom: none;
+}
+
+/* Hero */
+#header_hero {
+  margin-top: 15.625rem;
+  position: relative;
+}
+
+.master_logo {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0px;
+  width: 100%;
+}
+
+.bookmark {
+  display: none;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+#bookmark {
+  cursor: pointer;
+}
+
+/* Crowdfund stats */
+#live_stats {
+  text-align: center;
+}
+
+#live_stats > div {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.amount,
+.backers {
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.amount::after,
+.backers::after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+  padding-top: 25px;
+  border-bottom: 1px solid var(--dark_gray);
+  transition: width ease 0.2s;
+}
+
+.amount:hover::after,
+.backers:hover::after {
+  width: 50%;
+}
+
+#live_stats p {
+  color: #000;
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+#live_stats small {
+  margin: 0;
+  padding: 0;
+  color: var(--dark_gray);
+}
+
+#live_stats progress[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  appearance: none;
+  border: none;
+  width: 100%;
+  height: 15px;
+
+  /* For IE */
+  color: var(--dark_cyan);
+}
+
+#live_stats progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: var(--curve);
+}
+#live_stats progress[value]::-moz-progress-bar {
+  background-color: var(--dark_cyan);
+}
+
+#live_stats progress[value]::-webkit-progress-value {
+  background-color: var(--dark_cyan);
+  border-radius: var(--curve);
+}
+
+/* About */
+
+#about {
+  text-align: start;
+  align-items: flex-start;
+}
+
+#about .card {
+  width: 100%;
+  border: 1px solid var(--light_gray);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  text-align: start;
+  align-items: flex-start;
+}
+#about .card > * {
+  width: 100%;
+}
+#about .card > button {
+  width: 150px;
+  height: 50px;
+}
+
+#about h2 {
+  margin: 0 0 25px;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+#about p {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+#about h3 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+#about h4 {
+  margin: 10px 0 30px;
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--moderate_cyan);
+}
+
+#about .card p {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.pledges {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.pledges_left {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.left {
+  font-size: 0.9em;
+  margin-left: 7px;
+  color: var(--dark_gray);
+}
+
+/* ///////////////////////////////////////////// */
+/*Back this project */
+/* //////////////////////////////////////////// */
+#back_this_project {
+  visibility: hidden;
+  opacity: 0;
+  text-align: start;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  margin-top: 100px;
+  z-index: 2;
+  transition: visibility 0.5s linear, opacity 0.5s linear;
+}
+
+.back_this {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 25px;
+  width: 100%;
+}
+
+.back_this .close {
+  color: var(--dark_gray);
+  font-weight: 700;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.back_this .close:active {
+  transform: scale(0.9);
+}
+
+summary {
+  list-style: none;
+}
+
+.line {
+  display: block;
+  margin: 25px auto;
+  width: 100%;
+  border-bottom: 1px solid var(--light_gray);
+  transition: all ease 0.2s;
+}
+
+#back_this_project summary::marker {
+  display: none;
+}
+
+.enter_pledge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.enter_pledge .btn {
+  width: 100px;
+  height: 40px;
+}
+
+.currency {
+  width: 100px;
+  height: 40px;
+  border-radius: 30px;
+  border: var(--moderate_cyan) 1px solid;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 0;
+}
+
+.pledge_input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.pledged_amount {
+  border: 0;
+  outline: 0;
+  height: 35px;
+  width: 60px;
+}
+
+#back_this_project .card {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  text-align: start;
+  align-items: flex-start;
+}
+#back_this_project .card > * {
+  width: 100%;
+}
+#back_this_project .card > button {
+  width: 150px;
+  height: 50px;
+}
+
+#back_this_project h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+#back_this_project p {
+  margin: 0 0 25px 0;
+}
+
+#back_this_project h3 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+#back_this_project h4 {
+  margin: 10px 0 30px;
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--moderate_cyan);
+}
+
+#back_this_project .card p {
+  margin: 25px 0;
+}
+
+summary .pledges_left {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+summary .left {
+  font-size: 1em;
+}
+
+#back_card_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+
+#back_this_product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+#back_this_product h4 {
+  margin: 0;
+}
+
+#back_card_header h3 {
+  display: inline-block;
+}
+
+.circle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 5vw;
+  height: 5vw;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid var(--light_gray);
+  margin-right: 20px;
+}
+
+.small_circle {
+  opacity: 0;
+  width: 50%;
+  height: 50%;
+  background-color: var(--dark_cyan);
+  border-radius: 50%;
+  transition: opacity 0.5s ease-in;
+}
+
+.card_pledge {
+  border: none;
+  box-shadow: 0px 0px 0px 1px var(--light_gray);
+  transition: box-shadow 0.6s linear;
+  margin: 0.5em;
+}
+
+.card_pledge:focus-within {
+  box-shadow: 0px 0px 0px 2px var(--moderate_cyan);
+}
+
+details[open] .small_circle {
+  opacity: 1;
+}
+
+/* Thanks */
+#thanks {
+  visibility: hidden;
+  opacity: 0;
+  width: 80%;
+  position: absolute;
+  top: 0;
+  margin-top: 200px;
+  z-index: 2;
+  transition: visibility 0.5s linear, opacity 0.5s linear;
+}
+
+#thanks .btn {
+  width: 100px;
+}
+
+/* Media Queries///////////////////////// */
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 50px;
+  }
+
+  .card {
+    width: 60%;
+    padding: 50px 40px 40px;
+  }
+
+  /* Header */
+  .header_bg {
+    background-image: url(/image-hero-desktop.1cb3e33a.jpg);
+  }
+
+  .hamburger,
+  .menu_mobile {
+    display: none;
+  }
+
+  .menu_desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .links {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 20px 20px;
+    padding: 0;
+    text-decoration: none;
+    border-bottom: none;
+    transform: translateY(50%);
+  }
+
+  /* Hero */
+  #bookmark {
+    display: flex;
+    align-items: center;
+    background-color: var(--light_gray);
+    border-radius: 25px;
+    padding-right: 15px;
+    opacity: 0.6;
+    color: var(--dark_gray);
+    transition: all 0.8s ease-in;
+  }
+
+  .bookmark {
+    display: initial;
+    margin-left: 15px;
+  }
+
+  .project .btn {
+    width: 250px;
+  }
+
+  .project {
+    justify-content: space-between;
+  }
+
+  /* Crowdfund Live stats */
+  #live_stats.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #live_stats > div {
+    margin-bottom: 30px;
+  }
+
+  .amount,
+  .backers,
+  .days_left {
+    padding-bottom: 0px;
+    position: relative;
+  }
+
+  .backers,
+  .days_left {
+    border-left: 1px solid var(--dark_gray);
+  }
+
+  .amount::after,
+  .backers::after {
+    display: none;
+  }
+
+  #live_stats small {
+    font-size: 16px;
+  }
+
+  .progress {
+    grid-column: 1 / 4;
+  }
+
+  /* About */
+  #about p {
+    font-size: 16px;
+  }
+
+  #about .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  #about .card p {
+    grid-column: 1 / span 3;
+    margin: 0;
+  }
+
+  #about .btn {
+    margin: 0;
+    justify-self: end;
+  }
+
+  #about h4,
+  #about h3 {
+    height: 25px;
+    display: flex;
+    align-items: center;
+  }
+
+  #about h3 {
+    font-size: 1.2em;
+  }
+
+  #about h4 {
+    justify-content: flex-end;
+    text-align: end;
+    margin: 0;
+  }
+
+  .pledges {
+    margin: 0;
+  }
+
+  /* Back this project */
+
+  #back_this_project .card {
+    padding: 25px;
+  }
+
+  #back_this_project p {
+    font-size: 1em;
+  }
+  #back_this_project h3 {
+    margin-right: 10px;
+  }
+
+  #back_this_project details {
+    position: relative;
+  }
+
+  .enter_pledge {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .enter_pledge > p {
+    margin-bottom: 0;
+  }
+
+  .pledge_no {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+  }
+
+  .pledge_no .left {
+    margin: 0;
+  }
+
+  #back_this_product {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .circle {
+    width: 2vw;
+    height: 2vw;
+  }
+
+  .small_circle {
+    width: 1vw;
+    height: 1vw;
+  }
+
+  #thanks {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 900px) {
+  #about h3 {
+    font-size: 1em;
+  }
+
+  #live_stats p {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 690px) and (max-width: 980px) {
+  #back_this_product {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+
+  #back_this_project .pledge_no {
+    margin-top: 5px;
+  }
+}
+
+
+/*# sourceMappingURL=/styles.8986bff4.css.map */
